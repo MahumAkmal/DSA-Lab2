@@ -52,6 +52,11 @@ bool isSorted(const int* arr, const int size) {
         return false;
     }
 
+    // For empty or single-element array
+    if (size <= 1) {
+        return true;
+    }
+
     // Check if any element is greater than the next element
     for (int i = 0; i < size - 1; ++i) {
         if (arr[i] > arr[i + 1]) {
