@@ -47,6 +47,11 @@ void testEmptyArray() {
 
 // Function Implementation
 bool isSorted(const int* arr, const int size) {
+    // Check for null pointer or invalid size
+    if (arr == nullptr || size < 0) {
+        return false;
+    }
+
     // Check if any element is greater than the next element
     for (int i = 0; i < size - 1; ++i) {
         if (arr[i] > arr[i + 1]) {
