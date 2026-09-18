@@ -44,3 +44,29 @@ void testEmptyArray() {
     int arr[] = {};
     assert(isSorted(arr, 0) == true);
 }
+
+// Function Implementation
+bool isSorted(const int* arr, const int size) {
+    // Check if any element is greater than the next element
+    for (int i = 0; i < size - 1; ++i) {
+        if (arr[i] > arr[i + 1]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+int main() {
+    testSortedArray();
+    testUnsortedArray();
+    testDuplicateValues();
+    testSingleElement();
+    testDescendingArray();
+    testNegativeValues();
+    testNullArray();
+    testEmptyArray();
+
+    cout << "All TDD test cases passed successfully!" << endl;
+    return 0;
+}
